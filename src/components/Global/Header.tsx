@@ -146,7 +146,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='bg-green-700'>
+    <header className='bg-forest-700/80'>
       <nav
         className='max-w-7xl- mx-auto flex items-center justify-between px-6 py-3 lg:justify-start lg:space-x-8 lg:px-8'
         aria-label='Global'
@@ -446,7 +446,7 @@ const Header = () => {
         onClose={setMobileMenuOpen}
       >
         <div className='fixed inset-0 z-10 h-full' />
-        <Dialog.Panel className=' fixed inset-y-0 right-0 z-10 flex h-full w-full flex-col items-stretch overflow-y-auto bg-green-700 px-6 py-4 sm:max-w-sm sm:ring-1 sm:ring-slate-800/40'>
+        <Dialog.Panel className=' fixed inset-y-0 right-0 z-10 flex h-full w-full flex-col items-stretch overflow-y-auto bg-forest-70/80 px-6 py-4 sm:max-w-sm sm:ring-1 sm:ring-slate-800/40'>
           {/* Logo  */}
           <div className='flex items-center justify-between'>
             <a className='-m-1.5 flex items-center space-x-2 p-1.5'>

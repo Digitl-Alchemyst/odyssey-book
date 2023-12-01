@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <main className='bg-green-700/90 pb-8'>
+    <main className='bg-forest-700/60 pb-8'>
       <section className='mx-auto  w-full max-w-7xl justify-start px-6 py-3 lg:px-8'>
         <h2 className='text-5xl font-bold text-sand-400'>
           Your Digital Travel Assisstant
@@ -17,7 +17,7 @@ export default function Home() {
 
       <section>{/* Search Form  */}</section>
 
-      <section className='mx-auto w-full max-w-7xl justify-start px-6 py-3 lg:px-8 bg-green-100 rounded-lg mb-4'>
+      <section className='mx-auto w-full max-w-7xl justify-start px-6 py-3 lg:px-8 bg-forest-100 rounded-lg mb-4 shadow-xl shadow-sun-800/60'>
         {/* Trending Section  */}
         <div className=''>
           <h3 className='text-xl font-bold text-sand-600'>Trending Destinations</h3>
@@ -30,7 +30,7 @@ export default function Home() {
                 key={item.id}
                 src={item.img}
                 alt='Trending Desitination Photo'
-                className='w-80 h-72 object-cover rounded-md pb-2'
+                className='w-80 h-72 object-cover rounded-md shadow-lg shadow-sun-800/60 mb-4'
               />
 
               <p className='font-bold text-sand-700'>{item.title}</p>
