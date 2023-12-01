@@ -5,7 +5,7 @@ import react, { useState, Fragment } from 'react';
 import Link from 'next/link';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Popover, Dialog, Disclosure, Transition } from '@headlessui/react';
-import { FaChevronDown, FaBook, FaMountainSun, FaUber, FaLyft } from "react-icons/fa6";
+import { FaChevronDown, FaBook, FaMountainSun, FaUber, FaLyft, FaShip } from "react-icons/fa6";
 import { RiHotelFill } from "react-icons/ri";
 import { GiCommercialAirplane } from "react-icons/gi";
 import { IoCarSportSharp } from "react-icons/io5";
@@ -15,6 +15,10 @@ import { IoTrainSharp } from "react-icons/io5";
 import { FaBusAlt } from "react-icons/fa";
 import { BsFillTaxiFrontFill } from "react-icons/bs";
 import { PiPark } from "react-icons/pi";
+import { SiFireship } from "react-icons/si";
+import { GiMountainClimbing } from "react-icons/gi";
+import { LuMoonStar } from "react-icons/lu";
+import { MdTravelExplore } from "react-icons/md";
 
 const bookings = [
   {
@@ -88,6 +92,39 @@ const rides = [
     description: 'Pre-book a ride with a local taxi service',
     link: '#',
     icon: BsFillTaxiFrontFill,
+  },
+]
+
+const vacations = [
+  {
+    title: 'Book a Cruise',
+    description: 'Book a train pass',
+    link: '#',
+    icon: FaShip,
+  },
+  {
+    title: 'Retreat',
+    description: 'Explore bus routes and pre-book a ticket',
+    link: '#',
+    icon: SiFireship,
+  },
+  {
+    title: 'Adventure',
+    description: 'Pre-book a ride with Uber',
+    link: '#',
+    icon: GiMountainClimbing,
+  },
+  {
+    title: 'Honeymoon',
+    description: 'Pre-book a ride with Lyft',
+    link: '#',
+    icon: LuMoonStar,
+  },
+  {
+    title: 'All Inclusive',
+    description: 'Pre-book a ride with a local taxi service',
+    link: '#',
+    icon: MdTravelExplore,
   },
 ]
 
@@ -176,6 +213,57 @@ const Header = () => {
           </Popover>
           <Popover className='relative'>
             <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-sand-200 p-2'>
+              Vacation Packages
+              <FaChevronDown className='h-5 w-5 flex-none text-sand-300' aria-hidden='true'/>
+            </Popover.Button>
+            <Transition as={Fragment}
+              enter='transition ease-out duration-200'
+              enterFrom='opacity-0 translate-y-1'
+              enterTo='opacity-100 translate-y-0'
+              leave='transition ease-in duration-150'
+              leaveFrom='opacity-100 translate-y-0'
+              leaveTo='opacity-0 translate-y-1'              
+            >
+              <Popover.Panel className='absolute bg-sand-200 -left-42 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 ring-golden-400/70 shadow-fire-700/60 p-3'>
+                <div>
+                  {vacations.map((item) => (
+                    <div key={item.title} className='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-sun-300/60 hover:border hover:border-fire-500/70 hover:shadow-md'> 
+                      <item.icon aria-hidden='true' className='h-6 w-6 text-sun-700'/>
+                      <div className='flex-auto'>
+                        <a className='block font-semibold text-sun-500' href={item.link}>
+                        {item.title}
+                        <span className='absolute inset-0'/>
+                        </a>
+                      <p className='mt-1 text-sun-800'>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className='flex divide-x divide-slate-800 bg-sand-400 rounded-lg px-1 py-2'>
+                  {CTA.map((item) => (
+                    <a
+                      href={item.link}
+                      key={item.title}
+                      className='mr-2 font-semibold leading-6'
+                    >
+                      <div className='gap-x-2 hover:bg-fire-400/60 hover:border flex items-center justify-center hover:border-sun-500/70 hover:shadow-md rounded-md p-3 mx-1 w-full'>
+
+                      <item.icon
+                        className='h5-w-6 flex-none text-fire-700' aria-hidden='true'
+                        />
+                      <p className='text-sm'>
+                        
+                        {item.title}
+                        </p>
+                        </div>
+                    </a>
+                  ))}
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </Popover>
+          <Popover className='relative'>
+            <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-sand-200 p-2'>
               Attractions
               <FaChevronDown className='h-5 w-5 flex-none text-sand-300' aria-hidden='true'/>
             </Popover.Button>
@@ -200,6 +288,26 @@ const Header = () => {
                       <p className='mt-1 text-sun-800'>{item.description}</p>
                       </div>
                     </div>
+                  ))}
+                </div>
+                <div className='flex divide-x divide-slate-800 bg-sand-400 rounded-lg px-1 py-2'>
+                  {CTA.map((item) => (
+                    <a
+                      href={item.link}
+                      key={item.title}
+                      className='mr-2 font-semibold leading-6'
+                    >
+                      <div className='gap-x-2 hover:bg-fire-400/60 hover:border flex items-center justify-center hover:border-sun-500/70 hover:shadow-md rounded-md p-3 mx-1 w-full'>
+
+                      <item.icon
+                        className='h5-w-6 flex-none text-fire-700' aria-hidden='true'
+                        />
+                      <p className='text-sm'>
+                        
+                        {item.title}
+                        </p>
+                        </div>
+                    </a>
                   ))}
                 </div>
               </Popover.Panel>
@@ -233,14 +341,35 @@ const Header = () => {
                     </div>
                   ))}
                 </div>
+                <div className='flex divide-x divide-slate-800 bg-sand-400 rounded-lg px-1 py-2'>
+                  {CTA.map((item) => (
+                    <a
+                      href={item.link}
+                      key={item.title}
+                      className='mr-2 font-semibold leading-6'
+                    >
+                      <div className='gap-x-2 hover:bg-fire-400/60 hover:border flex items-center justify-center hover:border-sun-500/70 hover:shadow-md rounded-md p-3 mx-1 w-full'>
+
+                      <item.icon
+                        className='h5-w-6 flex-none text-fire-700' aria-hidden='true'
+                        />
+                      <p className='text-sm'>
+                        
+                        {item.title}
+                        </p>
+                        </div>
+                    </a>
+                  ))}
+                </div>
               </Popover.Panel>
             </Transition>
           </Popover>
         </Popover.Group>
 
         {/* Account  */}
-        <div>
-
+        <div className='hidden lg:flex lg:flex-1 lg:justify-end space-x-4'>
+          <a href='#' className='text-sm font-semibold leading-6 text-sand-200 w-full min-w-max'>Travel Pass+</a>
+          <a href='#' className='text-sm font-semibold leading-6 text-sand-200'>Login<span aria-hidden='true' className='ml-2'>&rarr;</span></a>
         </div>
       </nav>
     </header>
