@@ -19,6 +19,8 @@ import { SiFireship } from "react-icons/si";
 import { GiMountainClimbing } from "react-icons/gi";
 import { LuMoonStar } from "react-icons/lu";
 import { MdTravelExplore } from "react-icons/md";
+import { GrClose } from "react-icons/gr";
+import { cn } from '@/util/util';
 
 const bookings = [
   {
@@ -372,6 +374,128 @@ const Header = () => {
           <a href='#' className='text-sm font-semibold leading-6 text-sand-200'>Login<span aria-hidden='true' className='ml-2'>&rarr;</span></a>
         </div>
       </nav>
+
+      {/* Mobile Nav Menu  */}
+      <Dialog as='div' className='lg:hidden' open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <div className='fixed inset-0 z-10 h-full' />
+        <Dialog.Panel className=' fixed inset-y-0 z-10 right-0 w-full h-full items-stretch flex flex-col overflow-y-auto bg-green-700 px-6 py-4 sm:max-w-sm sm:ring-1 sm:ring-slate-800/40'>
+          
+          {/* Logo  */}
+          <div className='flex items-center justify-between'>
+            <a className='-m-1.5 p-1.5 flex items-center space-x-2'>
+              <img className="h-12 w-auto" src="/Logo.png" alt="Logo Image" />
+              <span className='text-2xl text-golden-500 min-w-max'>Travel Pass</span>
+            </a>
+              <button onClick={() => setMobileMenuOpen(false)} type='button' className='m-2 rounded-md text-sand-200'>
+                <GrClose className='h-6 w-6' aria-hidden='true'/>
+              </button>
+          </div>          
+
+          {/* Nav Menu  */}
+          <div className='mt-6 flow-root'>
+            <div className='-my-6 divide-y divide-sand-900'>
+              <div className='space-y-2 py-6 flex flex-col items-stretch h-full'>
+                <Disclosure as='div' className='-mx-3'>
+                    {({ open, close }) => (
+                      <>
+                        <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-sand-300 hover:text-fire-600'>
+                          Travel Bookings
+                          <FaChevronDown className={cn(
+                            open ? 'rotate-180' : '', 'h-5 w-5 flex-none'
+                          )}
+                          aria-hidden='true'
+                          />
+
+                        </Disclosure.Button>
+                        {[...bookings, ...CTA].map ((item) => (
+
+                          <Disclosure.Panel as='a' key={item.title} href={item.link} className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-sand-200 hover:text-sun-400'>
+                          {item.title}
+                        </Disclosure.Panel>
+                          ))}
+
+                      </>
+                    )}
+                </Disclosure>
+                <Disclosure as='div' className='-mx-3'>
+                    {({ open, close }) => (
+                      <>
+                        <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-sand-300 hover:text-fire-600'>
+                          Vacation Packages
+                          <FaChevronDown className={cn(
+                            open ? 'rotate-180' : '', 'h-5 w-5 flex-none'
+                          )}
+                          aria-hidden='true'
+                          />
+
+                        </Disclosure.Button>
+                        {[...vacations, ...CTA].map ((item) => (
+
+                          <Disclosure.Panel as='a' key={item.title} href={item.link} className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-sand-200 hover:text-sun-400'>
+                          {item.title}
+                        </Disclosure.Panel>
+                          ))}
+
+                      </>
+                    )}
+                </Disclosure>
+                <Disclosure as='div' className='-mx-3'>
+                    {({ open, close }) => (
+                      <>
+                        <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-sand-300 hover:text-fire-600'>
+                          Attractions
+                          <FaChevronDown className={cn(
+                            open ? 'rotate-180' : '', 'h-5 w-5 flex-none'
+                          )}
+                          aria-hidden='true'
+                          />
+
+                        </Disclosure.Button>
+                        {[...attractions, ].map ((item) => (
+
+                          <Disclosure.Panel as='a' key={item.title} href={item.link} className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-sand-200 hover:text-sun-400'>
+                          {item.title}
+                        </Disclosure.Panel>
+                          ))}
+
+                      </>
+                    )}
+                </Disclosure>
+                <Disclosure as='div' className='-mx-3'>
+                    {({ open, close }) => (
+                      <>
+                        <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-sand-300 hover:text-fire-600'>
+                          Book a Ride
+                          <FaChevronDown className={cn(
+                            open ? 'rotate-180' : '', 'h-5 w-5 flex-none'
+                          )}
+                          aria-hidden='true'
+                          />
+
+                        </Disclosure.Button>
+                        {[...rides, ...CTA].map ((item) => (
+
+                          <Disclosure.Panel as='a' key={item.title} href={item.link} className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-sand-200 hover:text-sun-400'>
+                          {item.title}
+                        </Disclosure.Panel>
+                          ))}
+
+                      </>
+                    )}
+                </Disclosure>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Account  */}
+          <div className='lg:hidden flex-col flex space-y-4 mt-auto'>
+            <a href='#' className='text-sm font-semibold leading-6 text-sand-200 w-full min-w-max hover:text-fire-400'>Travel Pass+</a>
+            <a href='#' className='text-sm font-semibold leading-6 text-sand-200 w-full min-w-max hover:text-fire-400'>Login<span aria-hidden='true' className='ml-2'>&rarr;</span></a>
+          </div>
+        </Dialog.Panel>
+
+      </Dialog>
     </header>
   );
 };
