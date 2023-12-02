@@ -65,7 +65,28 @@ function SearchForm() {
     defaultValues: defaultValues,
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {}
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    
+    const checkin_monthday = values.dates.from.getDate().toString();
+    const checkin_month = (values.dates.from.getMonth() + 1).toString();
+    const checkin_year = values.dates.from.getFullYear().toString();
+    const checkout_monthday = values.dates.to.getDate().toString();
+    const checkout_month = (values.dates.to.getMonth() + 1).toString();
+    const checkout_year = values.dates.to.getFullYear().toString();
+
+    const checkin = `${checkin_year}-${checkin_month}-${checkin_monthday}`;
+    const checkout = `${checkout_year}-${checkout_month}-${checkout_monthday}`;
+
+    const url = new URL('https://www.booking.com/searchresults.html?')
+    url.searchParams.set('ss', values.location);
+    url.searchParams.set('group_adults', values.adults)
+    url.searchParams.set('group_children', values.children)
+    url.searchParams.set('no_rooms', values.rooms)
+    url.searchParams.set('checkin', checkin)
+    url.searchParams.set('checkout', checkout)
+
+    router.push(`/search/lodging/?url=${url.href}`);
+  }
 
   return (
     <Form {...form}>
@@ -87,7 +108,7 @@ function SearchForm() {
                 <FormControl>
                   <Input
                     placeholder='Amsterdam, Netherlands'
-                    className='bg-sand-100 w-full'
+                    className='w-full bg-sand-100'
                     {...field}
                   />
                 </FormControl>
@@ -95,7 +116,7 @@ function SearchForm() {
             )}
           />
         </div>
-        <div className='grid w-full items-center gap-1.5 lg:max-w-sm'>
+        <div className='grid items-center gap-1.5 lg:max-w-sm'>
           <FormField
             control={form.control}
             name='dates'
@@ -109,8 +130,8 @@ function SearchForm() {
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
-                      <Button className='bg-sand-800 text-sand-200 w-full lg:w-[300px] justify-start text-left font-normal hover:bg-sun-700'>
-                        <ImCalendar className=' mr-3 h-4 w-4 opacity-50 text-sand-400'/>
+                      <Button className='w-full justify-start bg-sand-800 text-left font-normal text-sand-200 hover:bg-sun-700 lg:w-[300px]'>
+                        <ImCalendar className=' mr-3 h-4 w-4 text-sand-400 opacity-50' />
                         {field.value?.from ? (
                           field.value?.to ? (
                             <>
@@ -127,17 +148,17 @@ function SearchForm() {
                     </FormControl>
                   </PopoverTrigger>
                   <PopoverContent className='w-auto p-0' align='start'>
-                    <Calendar 
-                        initialFocus
-                        mode='range'
-                        selected={field.value}
-                        defaultMonth={field.value.from}
-                        onSelect={field.onChange}
-                        numberOfMonths={2}
-                        className='bg-sand-100'
-                        disabled={(date) =>
-                            date < new Date(new Date().setHours(0, 0, 0, 0))
-                        }
+                    <Calendar
+                      initialFocus
+                      mode='range'
+                      selected={field.value}
+                      defaultMonth={field.value.from}
+                      onSelect={field.onChange}
+                      numberOfMonths={2}
+                      className='bg-sand-100'
+                      disabled={(date) =>
+                        date < new Date(new Date().setHours(0, 0, 0, 0))
+                      }
                     />
                   </PopoverContent>
                 </Popover>
@@ -145,85 +166,83 @@ function SearchForm() {
             )}
           />
         </div>
-        
+
         <div className='flex w-full items-center space-x-2'>
-                    <div className='grid flex-1 items-center w-full'>
-          <FormField
-            control={form.control}
-            name='adults'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='flex space-x-2 text-sand-200'>
-                  <GiGlobe className='ml-2 h-4 w-4 text-sand-300' />
-                  <p>Adults</p>
-                </FormLabel>
-                <FormMessage />
-                <FormControl>
-                  <Input
-                  type='number'
-                    placeholder='Adults'
-                    className='bg-sand-100'
-                    {...field}
-                  />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-        </div>
-                    <div className='grid flex-1 items-center w-full'>
-          <FormField
-            control={form.control}
-            name='children'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='flex space-x-2 text-sand-200'>
-                  <GiGlobe className='ml-2 h-4 w-4 text-sand-300' />
-                  <p>Children</p>
-                </FormLabel>
-                <FormMessage />
-                <FormControl>
-                  <Input
-                  type='number'
-                    placeholder='Children'
-                    className='bg-sand-100'
-                    {...field}
-                  />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-        </div>
-                    <div className='grid flex-1 items-center w-full'>
-          <FormField
-            control={form.control}
-            name='rooms'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className='flex space-x-2 text-sand-200'>
-                  <GiGlobe className='ml-2 h-4 w-4 text-sand-300' />
-                  <p>Rooms</p>
-                </FormLabel>
-                <FormMessage />
-                <FormControl>
-                  <Input
-                  type='number'
-                    placeholder='Rooms'
-                    className='bg-sand-100'
-                    {...field}
-                  />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-        </div>
-        <div className='mt-auto'>
-            <Button
-                type='submit' className='bg-sun-500 text-base'
-            >
-                <p className='mr-2 text-sand-200'>Search</p>
-                <FaSearchLocation className='text-sand-300'/>
+          <div className='grid w-full flex-1 items-center'>
+            <FormField
+              control={form.control}
+              name='adults'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='flex space-x-2 text-sand-200'>
+                    <GiGlobe className='ml-2 h-4 w-4 text-sand-300' />
+                    <p>Adults</p>
+                  </FormLabel>
+                  <FormMessage />
+                  <FormControl>
+                    <Input
+                      type='number'
+                      placeholder='Adults'
+                      className='bg-sand-100'
+                      {...field}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className='grid w-full flex-1 items-center'>
+            <FormField
+              control={form.control}
+              name='children'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='flex space-x-2 text-sand-200'>
+                    <GiGlobe className='ml-2 h-4 w-4 text-sand-300' />
+                    <p>Children</p>
+                  </FormLabel>
+                  <FormMessage />
+                  <FormControl>
+                    <Input
+                      type='number'
+                      placeholder='Children'
+                      className='bg-sand-100'
+                      {...field}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className='grid w-full flex-1 items-center'>
+            <FormField
+              control={form.control}
+              name='rooms'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='flex space-x-2 text-sand-200'>
+                    <GiGlobe className='ml-2 h-4 w-4 text-sand-300' />
+                    <p>Rooms</p>
+                  </FormLabel>
+                  <FormMessage />
+                  <FormControl>
+                    <Input
+                      type='number'
+                      placeholder='Rooms'
+                      className='bg-sand-100'
+                      {...field}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className='mt-auto'>
+            <Button type='submit' className='bg-sun-500 text-base'>
+              <p className='mr-2 text-sand-200'>Search</p>
+              <FaSearchLocation className='h-4 w-4 text-sand-300' />
             </Button>
-        </div>
+          </div>
         </div>
       </form>
     </Form>

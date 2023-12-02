@@ -10,7 +10,7 @@ export const trending_data = [
     id: 3,
     img: 'Smokeys.jpg',
     title: 'Smokey Mountains',
-    location: 'Tennessee',
+    location: 'Tennessee, United States',
     offer: '28 Exclusive Deals',
   },
   {
@@ -24,7 +24,7 @@ export const trending_data = [
     id: 4,
     img: 'Keys.jpg',
     title: 'The Keys',
-    location: 'Florida',
+    location: 'Florida, United States',
     offer: '32 Exclusive Deals',
   },
   {
@@ -33,5 +33,19 @@ export const trending_data = [
     title: 'Dubai',
     location: 'United Arab Emirates',
     offer: '13 Exclusive Deals',
+  },
+  {
+    id: 6,
+    img: 'Hong_Kong.jpg',
+    title: 'Hong Kong',
+    location: 'Hong Kong',
+    offer: '9 Exclusive Deals',
+  },
+  {
+    id: 7,
+    img: 'Rome.jpg',
+    title: 'Rome',
+    location: 'Italy',
+    offer: '33 Exclusive Deals',
   },
 ];
