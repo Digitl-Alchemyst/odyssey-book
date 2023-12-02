@@ -10,44 +10,44 @@ const Footer = () => {
           <h3 className='mb-4 text-xl font-semibold underline'>Discover</h3>
           <ul className='space-y-0'>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/countries'
+                // href='/countries'
               >
                 Countries
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/regions'
+                // href='/regions'
               >
                 Regions
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/cities'
+                // href='/cities'
               >
                 Cities
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/districts'
+                // href='/districts'
               >
                 Districts
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/airports'
+                // href='/airports'
               >
                 Airports
-              </Link>
+              </p>
             </li>
           </ul>
         </div>
@@ -58,84 +58,84 @@ const Footer = () => {
           </h3>
           <ul className='space-y-0'>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/hotels'
+                // href='/hotels'
               >
                 Hotels
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/places'
+                // href='/places'
               >
                 Places of Interest
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/homes'
+                // href='/homes'
               >
                 Homes
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/apartments'
+                // href='/apartments'
               >
                 Apartments
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/resorts'
+                // href='/resorts'
               >
                 Resorts
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/villas'
+                // href='/villas'
               >
                 Villas
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/hostels'
+                // href='/hostels'
               >
                 Hostels
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/bbs'
+                // href='/bbs'
               >
                 B&Bs
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/guest-houses'
+                // href='/guest-houses'
               >
                 Guest Houses
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/unique-places'
+                // href='/unique-places'
               >
                 Unique Places to Stay
-              </Link>
+              </p>
             </li>
           </ul>
         </div>
@@ -146,20 +146,20 @@ const Footer = () => {
           </h3>
           <ul className='space-y-0'>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/all-flight-destinations'
+                // href='/all-flight-destinations'
               >
                 All Flight Destinations
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/all-car-rental-locations'
+                // href='/all-car-rental-locations'
               >
                 All Car Rental Locations
-              </Link>
+              </p>
             </li>
           </ul>
         </div>
@@ -170,44 +170,44 @@ const Footer = () => {
           </h3>
           <ul className='space-y-0'>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/reviews'
+                // href='/reviews'
               >
                 Reviews
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/monthly-stays'
+                // href='/monthly-stays'
               >
                 Discover Monthly Stays
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/unpacked'
+                // href='/unpacked'
               >
                 Unpacked: Travel Articles
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/seasonal-deals'
+                // href='/seasonal-deals'
               >
                 Seasonal and Holiday Deals
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/traveller-awards'
+                // href='/traveller-awards'
               >
                 Traveller Review Awards
-              </Link>
+              </p>
             </li>
           </ul>
         </div>
@@ -218,36 +218,36 @@ const Footer = () => {
           <h3 className='mb-4 text-xl font-semibold underline'>Services</h3>
           <ul className='space-y-0'>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/car-rental'
+                // href='/car-rental'
               >
                 Car Rental
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/flight-finder'
+                // href='/flight-finder'
               >
                 Flight Finder
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/restaurant-reservations'
+                // href='/restaurant-reservations'
               >
                 Restaurant Reservations
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/travel-agents'
+                // href='/travel-agents'
               >
                 Booking.com for Travel Agents
-              </Link>
+              </p>
             </li>
           </ul>
         </div>
@@ -256,36 +256,36 @@ const Footer = () => {
           <h3 className='mb-4 text-xl font-semibold underline'>Support</h3>
           <ul className='space-y-0'>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/covid-faqs'
+                // href='/covid-faqs'
               >
                 Coronavirus (COVID-19) FAQs
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/about'
+                // href='/about'
               >
                 About Booking.com
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/customer-service'
+                // href='/customer-service'
               >
                 Customer Service Help
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/partner-help'
+                // href='/partner-help'
               >
                 Partner Help
-              </Link>
+              </p>
             </li>
           </ul>
         </div>
@@ -294,36 +294,36 @@ const Footer = () => {
           <h3 className='mb-4 text-xl font-semibold underline'>Company</h3>
           <ul className='space-y-0'>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/careers'
+                // href='/careers'
               >
                 Careers
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/sustainability'
+                // href='/sustainability'
               >
                 Sustainability
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/press-center'
+                // href='/press-center'
               >
                 Press Center
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/safety-resource-center'
+                // href='/safety-resource-center'
               >
                 Safety Resource Center
-              </Link>
+              </p>
             </li>
           </ul>
         </div>
@@ -332,68 +332,68 @@ const Footer = () => {
           <h3 className='mb-4 text-xl font-semibold underline'>Legal</h3>
           <ul className='space-y-0'>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/investor-relations'
+                // href='/investor-relations'
               >
                 Investor Relations
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/terms'
+                // href='/terms'
               >
                 Terms & Conditions
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/partner-dispute'
+                // href='/partner-dispute'
               >
                 Partner Dispute
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/how-we-work'
+                // href='/how-we-work'
               >
                 How We Work
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/privacy'
+                // href='/privacy'
               >
                 Privacy & Cookie Statement
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/msa-statement'
+                // href='/msa-statement'
               >
                 MSA Statement
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/corporate-contact'
+                // href='/corporate-contact'
               >
                 Corporate Contact
-              </Link>
+              </p>
             </li>
             <li>
-              <Link
+              <p
                 className='text-sm hover:text-sun-400 hover:underline'
-                href='/content-guidelines'
+                // href='/content-guidelines'
               >
                 Content Guidelines and Reporting
-              </Link>
+              </p>
             </li>
           </ul>
         </div>

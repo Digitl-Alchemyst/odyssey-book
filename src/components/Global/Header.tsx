@@ -28,6 +28,7 @@ import { LuMoonStar } from 'react-icons/lu';
 import { MdTravelExplore } from 'react-icons/md';
 import { GrClose } from 'react-icons/gr';
 import { cn } from '@/util/util';
+import Image from 'next/image';
 
 const bookings = [
   {
@@ -154,7 +155,7 @@ const Header = () => {
         {/* Logo Home Button  */}
         <div className='lg-flex-1 flex'>
           <Link href='/' className='flex items-center space-x-2 p-1'>
-            <img className='h-12 w-auto' src='/Logo.png' alt='Logo Image' />
+            <Image src='/logo.png' alt='Logo Image' width={45} height={45} />
             <span className='min-w-max text-2xl text-golden-500'>
               Travel Pass
             </span>
