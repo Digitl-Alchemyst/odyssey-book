@@ -9,7 +9,7 @@
  </p>
 
 <p align="center">
-  This is a simple app that uses Oxylabs API scrapers to scrape booking.com for their hotel listings and returns the data in app. It is created in Next.js with Tailwind CSS & Typescript. It uses OxyLabs Universal Scrapper. It is built with Chad CN & uses React Skeleton Loading while utilizing Next.js Server Caching
+  This is a simple app that uses Oxylabs API scrapers to scrape booking.com for their hotel listings and returns the data in app. It is created in Next.js with Tailwind CSS & Typescript. It uses OxyLabs Universal Scrapper. It is built with Chad CN & utilizes Next.js Server Caching to improve response time.
   <br />
   <br />
   <a href="https://github.com/vercel/next.js">
