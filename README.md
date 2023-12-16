@@ -1,6 +1,6 @@
 <p align="center">
   <br />
-  <img width="200" src="https://travel-pass-beige.vercel.app/_next/image?url=%2Flogo.png&w=48&q=85" alt="Logo">
+  <img width="200" src="https://travel-pass-beige.vercel.app/_next/image?url=%2Flogo.png&w=48&q=55" alt="Logo">
   <br />
 </p>
 
